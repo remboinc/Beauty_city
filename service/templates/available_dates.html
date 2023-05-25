@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Свободные даты и время</title>
+</head>
+<body>
+<h1>Свободные даты и время</h1>
+{% for date, slots in available_slots.items %}
+    <h2>{{ date }}</h2>
+    {% for slot in slots %}
+        <p>{{ slot }}</p>
+    {% endfor %}
+{% endfor %}
+</body>
+</html>
