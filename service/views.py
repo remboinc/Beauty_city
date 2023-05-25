@@ -1,14 +1,8 @@
 from django.shortcuts import render
-
 from datetime import date, timedelta
-
 from .models import Appointment, Master
-
-from operator import itemgetter
 from collections import OrderedDict
 
-from operator import itemgetter
-from collections import OrderedDict
 
 def get_available_slots():
     existing_appointments = Appointment.objects.all()
@@ -29,14 +23,9 @@ def get_available_slots():
         current_date = current_date + timedelta(days=1)
         if len(available_slots) == 7:
             break
-    print(available_slots)
     return available_slots
-
-
-
 
 
 def available_dates(request):
     available_slots = get_available_slots()
     return render(request, 'available_dates.html', {'available_slots': available_slots})
-
